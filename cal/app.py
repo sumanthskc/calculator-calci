@@ -7,8 +7,8 @@ import calculator as c
 
 
 def lambda_handler(event, context):
-    
-    a,b,op=int(event["a"]),int(event["b"]),str(event["op"])
+    params = event.get('queryStringParameters')
+    a,b,op=int(params["a"]),int(params["b"]),str(params["op"])
     result=None
     ops = {
     "+": c.add,
